@@ -1,0 +1,61 @@
+﻿=== Axlebolt.Standoff.Anitcheat.AntiCheatManager ===
+
+### [12236] Axlebolt.Standoff.Anitcheat.AntiCheatManager  (image ?)
+    fields[43342+5] methods[80559+17]
+      field LIGKLBFLNEN
+      field FFJIMKAILFI
+      field BAHHLAMMDFL
+      field DLCAHFLIMJE
+      field NHCPAHOMDPN
+      method <bad:134220191>(2048 params)
+      method exception(0 params)
+      method exception(4 params)
+      method <bad:134220201>(2048 params)
+      method Character(0 params)
+      method methodName(1 params)
+      method <bad:134220211>(2048 params)
+      method xtenders(0 params)
+      method variable(0 params)
+      method <bad:134220221>(2048 params)
+      method assHandle(0 params)
+      method node(0 params)
+      method <bad:134220231>(2048 params)
+      method eyUp(0 params)
+      method value(4 params)
+      method <bad:134220241>(2048 params)
+      method xtenders(0 params)
+
+=== search SystemWatch / Anticheat namespaces in all images ===
+
+### [12236] Axlebolt.Standoff.Anitcheat.AntiCheatManager  (image ?)
+    fields[43342+5] methods[80559+17]
+      field LIGKLBFLNEN
+      field FFJIMKAILFI
+      field BAHHLAMMDFL
+      field DLCAHFLIMJE
+      field NHCPAHOMDPN
+      method <bad:134220191>(2048 params)
+      method exception(0 params)
+      method exception(4 params)
+      method <bad:134220201>(2048 params)
+      method Character(0 params)
+      method methodName(1 params)
+      method <bad:134220211>(2048 params)
+      method xtenders(0 params)
+      method variable(0 params)
+      method <bad:134220221>(2048 params)
+      method assHandle(0 params)
+      method node(0 params)
+      method <bad:134220231>(2048 params)
+      method eyUp(0 params)
+      method value(4 params)
+      method <bad:134220241>(2048 params)
+      method xtenders(0 params)
+
+### [12258] nks.Axlebolt.Standoff.Anitcheat  (image ?)
+    fields[80657+1] methods[-1+4]
+      field <bad:1610672163>
+      method Timestamp(5888 params)
+      method GetText(0 params)
+      method le(0 params)
+      method <bad:4294967295>(1536 params)

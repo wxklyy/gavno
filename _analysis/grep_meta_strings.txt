@@ -1,0 +1,172 @@
+﻿
+########## anticheat_core: 47 unique hits ##########
+    <resp>5__1
+    <anticheat>5__4
+    RecoilAngle
+    get_RecoilAimMultOnCrouch
+    get_RecoilControl
+    get_RecoilParameters
+    get_RecoilMultOnCrouch
+    get_RecoilAimMult
+    _recoilControl
+    _recoilParameters
+    _recoilMultOnCrouch
+    _recoilAimMult
+    _recoilAimMultOnCrouch
+    RecoilParameters
+    RecoilMultOnCrouch
+    RecoilAimMult
+    RecoilAimMultOnCrouch
+    RecoilControl
+    get_RecoilAccelStep
+    get_RecoilAccelDuration
+    recoilAccelerationCurve
+    recoilAccelDuration
+    recoilAccelStep
+    RecoilAccelDuration
+    RecoilAccelStep
+    RecoilAnimation
+    WeaponRecoilAnimation
+    RecoilConfigCanvas
+    _recoilProgressImage
+    RecoilConfigTool
+    Axlebolt.Standoff.Game.Anticheat
+    GameAntiCheatManager
+    RecoilDecalEmitter
+    RecoilDecalsDrawer
+    RecoilTarget
+    _recoilScreen
+    RecoilTestController
+    recoilTargetControlScreen
+    _recoilTarget
+    RecoilTestDummyHitController
+    RecoilTestInteractableScreen
+    _gunRecoilProgresBar
+    Axlebolt.Standoff.Bolt.Anticheat.Android.SystemWatch
+    AntiCheatManager
+    Anticheat
+    _WriteRecoilSyncData_None
+    _ReadRecoilSyncData_None
+
+########## integrity: 6 unique hits ##########
+    checksum
+    IntegrityStream
+    NoChecksum
+    ChecksumCoverage
+    VX_E_FILE_CORRUPT
+    VX_E_FILE_CORRUPT_get
+
+########## jailbreak: 2 unique hits ##########
+    Friday
+    SetWeak
+
+########## debugger: 60 unique hits ##########
+    debugger_thread
+    NotifyDebuggerOfWaitCompletionIfNecessary
+    AnyTaskRequiresNotifyDebuggerOfWaitCompletion
+    get_ShouldNotifyDebuggerOfWaitCompletion
+    NotifyDebuggerOfWaitCompletion
+    ShouldNotifyDebuggerOfWaitCompletion
+    HandleNonSuccessAndDebuggerNotification
+    DebuggerStepThroughAttribute
+    DebuggerHiddenAttribute
+    DebuggerNonUserCodeAttribute
+    Debugger
+    HJNFHDGDBME
+    FIJFHGDBLMB
+    <KOEEBCGDBCN>k__BackingField
+    NGDBMADNMGI
+    GFPEGDBALIG
+    EMFGDBAOMOL
+    MKGDBMDLMAK
+    KGMLLDBNGCF
+    CELGDBCJPGM
+    <LOFGFGDBBHG>k__BackingField
+    HCICCAGDBDD
+    MPBGDBBIBNM
+    GDBBEKOCCLG
+    LFLGDBDCBCD
+    ANCGDBCFNIJ
+    GPNOLFMGGDB
+    LNGDBKNDJAM
+    GLMJGDBKODN
+    BJEGDBOMIDL
+    _footstepTraceParameters
+    _curFootstepTraceProgress
+    FootstepTraceParameters
+    EGNNJBGDBOD
+    CastDebugger
+    BBAAGDBOPFB
+    IEANCPLMGDB
+    GDBEJPHNOPO
+    DHBEMGGDBFP
+    NJKACGDBDHJ
+    BGDBNBNKCFE
+    CFLGNOGDBEO
+    DMDEEGDBLED
+    GDBOJIBHEJK
+    CIAJIMHGDBF
+    BGDBKFMNLMN
+    AGDBMCJGDDB
+    KJHFDGDBEFP
+    BPACMBIGDBK
+    MNGDBDJMKON
+    OLPOMLGDBKD
+    PDGDBIHEINI
+    OEDAEMGGDBB
+    NOBLGDBAJIC
+    GDBHMENBOBP
+    FNIFEHGDBJL
+    CDFPIBGDBCD
+    NOOLLLLDBHJ
+    ValueDebuggerView
+    DLOMOLLDBBL
+
+########## vpn_proxy: 5 unique hits ##########
+    skipSecurityCheck
+    IPSecEncapsulatingSecurityPayload
+    IPSecAuthenticationHeader
+    libipsecA
+    libipsec
+
+########## emulator: 22 unique hits ##########
+    AddHostWithSimulator
+    ConnectWithSimulatorInternal
+    ConnectWithSimulator
+    get_MinNetSimulatorTimeout
+    get_MaxNetSimulatorTimeout
+    g_MaxNetSimulatorTimeout
+    m_MinNetSimulatorTimeout
+    m_MaxNetSimulatorTimeout
+    MinNetSimulatorTimeout
+    MaxNetSimulatorTimeout
+    ConnectionSimulatorConfig
+    ConnectionSimulatorConfigInternal
+    set_MinNetSimulatorTimeout
+    set_MaxNetSimulatorTimeout
+    m_UseSimulator
+    get_useSimulator
+    set_useSimulator
+    useSimulator
+    _simulator
+    CharmSimulator
+    InputSimulator
+    RandomInputsSimulator
+
+########## report_ban: 2 unique hits ##########
+    get_BanedForVoteKicking
+    BanedForVoteKicking
+
+########## vac_like: 5 unique hits ##########
+    isNonProtectedInternal
+    System.Net.Http.dll
+    AHGGMPHFEAC
+    <JHEPJNPAEAC>k__BackingField
+    DKJFLNNJEAC
+
+########## memory_scan: 0 unique hits ##########
+
+########## hook_detect: 3 unique hits ##########
+    dlopen
+    dlsym
+    ICMADLOPENH

@@ -1,0 +1,15 @@
+﻿target method/field names in string table:
+  anticheat
+  Anticheat
+  ReportViaServer
+  PlayerBannedHandler
+  Anticheat
+  Anitcheat
+  GetCheatDetector
+  Anticheat
+  BanedForVoteKicking
+
+total methods: 82437
+
+methods with AC-related names: 1
+  method[77575] ReportViaServer  ->  [10082] None._LongTimePattern  <Assembly-CSharp.dll>

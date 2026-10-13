@@ -1,0 +1,144 @@
+﻿Assembly-CSharp range: (8409, 12022)
+
+AntiCheatManager raw record ints:
+  [00] 1223211
+  [04] 1223228
+  [08] 35569
+  [12] 83078
+  [16] -1
+  [20] 35568
+  [24] 35569
+  [28] -1
+  [32] 1048577
+  [36] 43342
+  [40] 80559
+  [44] -1
+  [48] -1
+  [52] 3836
+  [56] -1
+  [60] 113624
+  [64] -1
+  [68] 17
+  [72] 5
+  [76] 393218
+  [80] 0
+  [84] 3072
+name: AntiCheatManager  ns: Axlebolt.Standoff.Anitcheat
+
+field_start: 43342 method_start: 80559
+field range: 43342 .. 43373  method range: 80559 .. 80637
+
+== FIELDS ==
+  [43342] LIGKLBFLNEN  (typeIndex=47673)
+  [43343] FFJIMKAILFI  (typeIndex=47700)
+  [43344] BAHHLAMMDFL  (typeIndex=83080)
+  [43345] DLCAHFLIMJE  (typeIndex=83080)
+  [43346] NHCPAHOMDPN  (typeIndex=83081)
+  [43347] <>9  (typeIndex=83084)
+  [43348] <>9__9_0  (typeIndex=83086)
+  [43349] <>1__state  (typeIndex=47717)
+  [43350] <>t__builder  (typeIndex=68059)
+  [43351] code  (typeIndex=47717)
+  [43352] msg  (typeIndex=47776)
+  [43353] <>u__1  (typeIndex=66676)
+  [43354] EGBGCDJMHAC  (typeIndex=53081)
+  [43355] FBBKEBDHEHG  (typeIndex=83094)
+  [43356] CPEAJJLLJEP  (typeIndex=47776)
+  [43357] <>9  (typeIndex=83098)
+  [43358] <>9__27_0  (typeIndex=83099)
+  [43359] unityPlayer  (typeIndex=83102)
+  [43360] context  (typeIndex=71720)
+  [43361] array  (typeIndex=71720)
+  [43362] index  (typeIndex=47717)
+  [43363] LLPBELGKJPN  (typeIndex=83108)
+  [43364] HHKNEEMFPGE  (typeIndex=75189)
+  [43365] FACAPMOOODO  (typeIndex=75189)
+  [43366] MLKLGODNHEL  (typeIndex=75189)
+  [43367] PDEOIKKDOMF  (typeIndex=75189)
+  [43368] ENDLOAMFBHF  (typeIndex=75189)
+  [43369] OPAHDCBDMEH  (typeIndex=75189)
+  [43370] IOOLPINHCJG  (typeIndex=75189)
+  [43371] MPICODIKGID  (typeIndex=83113)
+  [43372] <>1__state  (typeIndex=47673)
+
+== METHODS (MTD=40) ==
+  [80559] <bad:134220191>
+  [80560] exception
+  [80561] exception
+  [80562] <bad:134220201>
+  [80563] Character
+  [80564] methodName
+  [80565] <bad:134220211>
+  [80566] xtenders
+  [80567] variable
+  [80568] <bad:134220221>
+  [80569] assHandle
+  [80570] node
+  [80571] <bad:134220231>
+  [80572] eyUp
+  [80573] value
+  [80574] <bad:134220241>
+  [80575] xtenders
+  [80576] left
+  [80577] <bad:134220251>
+  [80578] xtenders
+  [80579] isChecked
+  [80580] <bad:134220261>
+  [80581] xtenders
+  [80582] expr
+  [80583] <bad:134220271>
+  [80584] xtenders
+  [80585] node
+  [80586] <bad:134220281>
+  [80587] t
+  [80588] node
+  [80589] <bad:134220291>
+  [80590] xtenders
+  [80591] index
+  [80592] <bad:134220301>
+  [80593] xtenders
+  [80594] expr
+  [80595] <bad:134220311>
+  [80596] xtenders
+  [80597] expr
+  [80598] <bad:134220321>
+  [80599] xtenders
+  [80600] expr
+  [80601] <bad:134220331>
+  [80602] dXmit
+  [80603] parameters
+  [80604] <bad:134220341>
+  [80605] rOff
+  [80606] parameter
+  [80607] <bad:134220351>
+  [80608] ers
+  [80609] locals
+  [80610] <bad:134220361>
+  [80611] ile
+  [80612] argumentIndex
+  [80613] <bad:134220371>
+  [80614] eyExit
+  [80615] value
+  [80616] <bad:134220381>
+  [80617] tAmMode
+  [80618] delegateType
+  [80619] <bad:134220391>
+  [80620] 
+  [80621] frame
+  [80622] <bad:134220401>
+  [80623] ers
+  [80624] index
+  [80625] <bad:134220411>
+  [80626] ers
+  [80627] frame
+  [80628] <bad:134220421>
+  [80629] scorlib
+  [80630] defaultValue
+  [80631] <bad:134220431>
+  [80632] ers
+  [80633] type
+  [80634] <bad:134220441>
+  [80635] ers
+  [80636] closure
+
+== ALL types with cheat-ish names in Assembly-CSharp ==

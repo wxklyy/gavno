@@ -1,0 +1,29 @@
+﻿images: 64
+  mscorlib.dll: typeStart=0 typeCount=1436
+  UnityEngine.AudioModule.dll: typeStart=3582 typeCount=15
+  mscorlib: typeStart=1 typeCount=1963
+  UnityEngine.IMGUIModule.dll: typeStart=3834 typeCount=41
+  mscorlib: typeStart=1 typeCount=2545
+  Bolt.Api.dll: typeStart=3988 typeCount=1804
+  lib.dll: typeStart=9 typeCount=4294967295
+  mscorlib: typeStart=1 typeCount=14178
+  Facebook.Unity.Settings.dll: typeStart=6730 typeCount=5
+  mscorlib: typeStart=1 typeCount=14437
+  mscorlib: typeStart=54 typeCount=7036
+  Firebase.Analytics.dll: typeStart=7195 typeCount=9
+  mscorlib: typeStart=1 typeCount=14792
+  Facebook.Unity.Android.dll: typeStart=7909 typeCount=2
+
+typeDefinitions: 12568
+
+== TYPES matching anticheat-ish names ==
+  [2245] Array__Insert.erProtected   (image: scorlib)
+  [12236] Axlebolt.Standoff.Anitcheat.AntiCheatManager   (image: scorlib)
+  [3543] CollisionDetectionMode.   (image: scorlib)
+  [1279] ProtectMachine.   (image: mscorlib.dll)
+  [9001] hineProtected.m.Reflection.Emit   (image: scorlib)
+  [9000] mscorlib.MachineProtected   (image: scorlib)
+  [8908] mscorlib._ProtectUser   (image: scorlib)
+  [2246] rProtected.iveStackTrace   (image: scorlib)
+
+total matches: 8

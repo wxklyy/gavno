@@ -1,0 +1,53 @@
+﻿=== AntiCheatManager with MTD=32 ===
+
+### [12236] Axlebolt.Standoff.Anitcheat.AntiCheatManager
+    methods[80559+17] fields[43342+5]
+      field LIGKLBFLNEN
+      field FFJIMKAILFI
+      field BAHHLAMMDFL
+      field DLCAHFLIMJE
+      field NHCPAHOMDPN
+      method NFIAANGEACF
+      method OnApplicationPause
+      method CLNMOGLLDMN
+      method HJABCADCDMB
+      method BLBHHGOPBCM
+      method DHNPEOIDGED
+      method ECHAHOJDKEB
+      method .ctor
+      method DKCNABDGPOB
+      method JIHHIOOOIPL
+      method EGJIPKOMIMC
+      method CKIHKHLBKPB
+      method FGDLBIABKOK
+      method BAPICMEIIOA
+      method IIIJDOLJHKB
+      method DMGAOIANFNK
+      method OnDestroy
+
+=== all types in anticheat namespaces ===
+
+### [12236] Axlebolt.Standoff.Anitcheat.AntiCheatManager
+    methods[80559+17] fields[43342+5]
+      field LIGKLBFLNEN
+      field FFJIMKAILFI
+      field BAHHLAMMDFL
+      field DLCAHFLIMJE
+      field NHCPAHOMDPN
+      method NFIAANGEACF
+      method OnApplicationPause
+      method CLNMOGLLDMN
+      method HJABCADCDMB
+      method BLBHHGOPBCM
+      method DHNPEOIDGED
+      method ECHAHOJDKEB
+      method .ctor
+      method DKCNABDGPOB
+      method JIHHIOOOIPL
+      method EGJIPKOMIMC
+      method CKIHKHLBKPB
+      method FGDLBIABKOK
+      method BAPICMEIIOA
+      method IIIJDOLJHKB
+      method DMGAOIANFNK
+      method OnDestroy

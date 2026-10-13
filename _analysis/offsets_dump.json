@@ -1,0 +1,274 @@
+{
+  "Axlebolt.Standoff.Player.ArmsLodGroup": {
+    "typeIndex": 9384,
+    "image": "Assembly-CSharp.dll",
+    "fields": {
+      "_armsMeshRenderer": {
+        "index": 29876,
+        "typeIndex": 75679
+      },
+      "_glovesMeshRenderer": {
+        "index": 29877,
+        "typeIndex": 75679
+      },
+      "ECHPPCNHJNM": {
+        "index": 29878,
+        "typeIndex": 47697
+      },
+      "JBHPMHIHOCD": {
+        "index": 29879,
+        "typeIndex": 75680
+      }
+    },
+    "methods": {
+      "<bad:4294967295>": {
+        "index": 61646,
+        "paramCount": 1536,
+        "token": 5394
+      },
+      "tConstraints": {
+        "index": 61643,
+        "paramCount": 1,
+        "token": 4294967295
+      },
+      "ENKNHOPEHKJ": {
+        "index": 61632,
+        "paramCount": 0,
+        "token": 486
+      },
+      "tringToLong": {
+        "index": 61633,
+        "paramCount": 65535,
+        "token": 1175375
+      },
+      "MGNOBGDFOGA": {
+        "index": 61636,
+        "paramCount": 0,
+        "token": 486
+      },
+      "d": {
+        "index": 61637,
+        "paramCount": 0,
+        "token": 1166517
+      },
+      ".ctor": {
+        "index": 61640,
+        "paramCount": 0,
+        "token": 6278
+      },
+      "assHandle": {
+        "index": 61641,
+        "paramCount": 65535,
+        "token": 1166637
+      },
+      "get_BombSprite": {
+        "index": 61644,
+        "paramCount": 0,
+        "token": 2182
+      },
+      "yptedContent": {
+        "index": 61645,
+        "paramCount": 0,
+        "token": 1175483
+      }
+    }
+  },
+  "Axlebolt.Standoff.Player.Hit.HitController": {
+    "typeIndex": 9591,
+    "image": "Assembly-CSharp.dll",
+    "fields": {
+      "_config": {
+        "index": 30938,
+        "typeIndex": 76314
+      },
+      "BPLLNOHEJBH": {
+        "index": 30939,
+        "typeIndex": 76315
+      },
+      "<PHGCLOKIOCA>k__BackingField": {
+        "index": 30940,
+        "typeIndex": 75230
+      },
+      "DPDKFGMGLCP": {
+        "index": 30941,
+        "typeIndex": 76316
+      },
+      "JBLOOPJHGMG": {
+        "index": 30942,
+        "typeIndex": 47849
+      },
+      "ECJBKJLGANB": {
+        "index": 30943,
+        "typeIndex": 76317
+      },
+      "KHNCFDOCIAD": {
+        "index": 30944,
+        "typeIndex": 59301
+      },
+      "JBJNGKBKCBF": {
+        "index": 30945,
+        "typeIndex": 76303
+      }
+    },
+    "methods": {
+      "<bad:4294967295>": {
+        "index": 63142,
+        "paramCount": 1536,
+        "token": 46530
+      },
+      "ues": {
+        "index": 63123,
+        "paramCount": 1,
+        "token": 4294967295
+      },
+      "EEGECFKKHML": {
+        "index": 63124,
+        "paramCount": 0,
+        "token": 129
+      },
+      "derPath": {
+        "index": 63141,
+        "paramCount": 0,
+        "token": 1201950
+      },
+      "e_install_handlers": {
+        "index": 63139,
+        "paramCount": 1,
+        "token": 4294967295
+      },
+      "EJFCAIHNOJK": {
+        "index": 63128,
+        "paramCount": 0,
+        "token": 134
+      },
+      "untime_install_handlers": {
+        "index": 63135,
+        "paramCount": 0,
+        "token": 4294967295
+      },
+      "OKLFOOBHOKK": {
+        "index": 63132,
+        "paramCount": 0,
+        "token": 129
+      },
+      "Awake": {
+        "index": 63136,
+        "paramCount": 0,
+        "token": 129
+      },
+      "KEDCLJKBCDM": {
+        "index": 63140,
+        "paramCount": 0,
+        "token": 2182
+      },
+      "veMAC": {
+        "index": 63143,
+        "paramCount": 0,
+        "token": 4294967295
+      }
+    }
+  },
+  "Axlebolt.Standoff.Anitcheat.AntiCheatManager": {
+    "typeIndex": 12236,
+    "image": "?",
+    "fields": {
+      "LIGKLBFLNEN": {
+        "index": 43342,
+        "typeIndex": 47673
+      },
+      "FFJIMKAILFI": {
+        "index": 43343,
+        "typeIndex": 47700
+      },
+      "BAHHLAMMDFL": {
+        "index": 43344,
+        "typeIndex": 83080
+      },
+      "DLCAHFLIMJE": {
+        "index": 43345,
+        "typeIndex": 83080
+      },
+      "NHCPAHOMDPN": {
+        "index": 43346,
+        "typeIndex": 83081
+      }
+    },
+    "methods": {
+      "<bad:134220191>": {
+        "index": 80559,
+        "paramCount": 2048,
+        "token": 134220193
+      },
+      "exception": {
+        "index": 80561,
+        "paramCount": 4,
+        "token": 306736
+      },
+      "<bad:134220201>": {
+        "index": 80562,
+        "paramCount": 2048,
+        "token": 134220203
+      },
+      "Character": {
+        "index": 80563,
+        "paramCount": 0,
+        "token": 4897
+      },
+      "methodName": {
+        "index": 80564,
+        "paramCount": 1,
+        "token": 7601
+      },
+      "<bad:134220211>": {
+        "index": 80565,
+        "paramCount": 2048,
+        "token": 134220213
+      },
+      "xtenders": {
+        "index": 80575,
+        "paramCount": 0,
+        "token": 3799
+      },
+      "variable": {
+        "index": 80567,
+        "paramCount": 0,
+        "token": 46395
+      },
+      "<bad:134220221>": {
+        "index": 80568,
+        "paramCount": 2048,
+        "token": 134220223
+      },
+      "assHandle": {
+        "index": 80569,
+        "paramCount": 0,
+        "token": 3799
+      },
+      "node": {
+        "index": 80570,
+        "paramCount": 0,
+        "token": 307230
+      },
+      "<bad:134220231>": {
+        "index": 80571,
+        "paramCount": 2048,
+        "token": 134220233
+      },
+      "eyUp": {
+        "index": 80572,
+        "paramCount": 0,
+        "token": 312
+      },
+      "value": {
+        "index": 80573,
+        "paramCount": 4,
+        "token": 110362
+      },
+      "<bad:134220241>": {
+        "index": 80574,
+        "paramCount": 2048,
+        "token": 134220243
+      }
+    }
+  }
+}

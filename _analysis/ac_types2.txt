@@ -1,0 +1,1 @@
+﻿name offsets: {'GameAntiCheatManager': [1181505], 'ColliderAnitСheat2': [1181380], 'Observer': [1217869], 'AnitcheatTesting': [978885]}

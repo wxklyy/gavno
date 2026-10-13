@@ -1,0 +1,11 @@
+# Local/build artifacts
+__pycache__/
+.theos/
+.freebuff/
+
+# Large binaries and extracted reverse-engineering data stay out of Git.
+*.ipa
+*.dylib
+dump/
+rise_analysis/
+_analysis/extracted/

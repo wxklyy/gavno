@@ -1,0 +1,91 @@
+name: Build Patched IPA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cheat/**'
+      - 'patch_ipa.py'
+  workflow_dispatch:
+    inputs:
+      ipa_artifact:
+        description: 'IPA file name in repo root (e.g. StandRise-RE-1.0.0F2.ipa)'
+        required: true
+        default: 'StandRise-RE-1.0.0F2.ipa'
+
+jobs:
+  build-cheat-and-patch:
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+      - name: Install Theos
+        run: |
+          brew install dpkg make ldid-procursus
+          export THEOS=$HOME/theos
+          git clone --recursive https://github.com/theos/theos.git $THEOS
+          curl -sL https://github.com/theos/sdks/archive/master.tar.gz | tar xz -C $THEOS/sdks --strip-components=1
+
+      - name: Build S2Rise.dylib
+        run: |
+          cd cheat
+          export THEOS=$HOME/theos
+          export PATH=$THEOS/bin:$PATH
+
+          # build the tweak as a dylib
+          make FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+
+          # locate compiled dylib
+          DYLIB=$(find .theos -type f -name "S2Rise.dylib" ! -path "*.dSYM*" | head -1)
+          if [ -z "$DYLIB" ]; then
+            echo "[-] S2Rise.dylib not found in build output"
+            find .theos -type f
+            exit 1
+          fi
+
+          echo "[+] built: $DYLIB"
+          file "$DYLIB"
+          cp "$DYLIB" $GITHUB_WORKSPACE/S2Rise.dylib
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Patch IPA
+        run: |
+          IPA_FILE="${{ github.event.inputs.ipa_artifact || 'StandRise-RE-1.0.0F2.ipa' }}"
+
+          if [ ! -f "$IPA_FILE" ]; then
+            echo "[-] IPA not found: $IPA_FILE"
+            echo "[*] available files:"
+            ls -la *.ipa 2>/dev/null || echo "  no .ipa files in root"
+            exit 1
+          fi
+
+          python3 patch_ipa.py "$IPA_FILE" \
+            --dylib S2Rise.dylib \
+            --output S2Rise_patched.ipa
+
+          echo "[+] patched IPA ready"
+          ls -lh S2Rise_patched.ipa
+
+      - name: Upload Patched IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: S2Rise-patched-ipa
+          path: S2Rise_patched.ipa
+          retention-days: 30
+
+      - name: Upload Raw Dylib
+        uses: actions/upload-artifact@v4
+        with:
+          name: S2Rise-dylib
+          path: S2Rise.dylib
+          retention-days: 30
