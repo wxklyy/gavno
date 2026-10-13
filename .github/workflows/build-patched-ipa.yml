@@ -12,6 +12,10 @@ on:
         description: 'IPA file name in repo root (e.g. StandRise-RE-1.0.0F2.ipa)'
         required: true
         default: 'StandRise-RE-1.0.0F2.ipa'
+      ipa_url:
+        description: 'Optional HTTPS URL to download the input IPA'
+        required: false
+        default: ''
 
 jobs:
   build-cheat-and-patch:
@@ -62,8 +66,15 @@ jobs:
         run: |
           IPA_FILE="${{ github.event.inputs.ipa_artifact || 'StandRise-RE-1.0.0F2.ipa' }}"
 
+          IPA_URL="${{ github.event.inputs.ipa_url || '' }}"
+          if [ ! -f "$IPA_FILE" ] && [ -n "$IPA_URL" ]; then
+            echo "[+] downloading IPA from supplied URL"
+            curl --fail --location --retry 3 --output "$IPA_FILE" "$IPA_URL"
+          fi
+
           if [ ! -f "$IPA_FILE" ]; then
             echo "[-] IPA not found: $IPA_FILE"
+            echo "[*] Upload the IPA to the repository (or Git LFS) or run workflow_dispatch with ipa_url"
             echo "[*] available files:"
             ls -la *.ipa 2>/dev/null || echo "  no .ipa files in root"
             exit 1
