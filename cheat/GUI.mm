@@ -14,6 +14,13 @@ static CGPoint g_DragOffset;
 
 // toggle button position (floating button to open/close menu)
 static CGRect g_ToggleButtonRect = CGRectMake(10, 30, 44, 44);
+static NSTimeInterval g_LastCenterTap = 0;
+static int g_CenterTapCount = 0;
+
+static CGRect GUI_WatermarkRect() {
+    CGRect b = [UIScreen mainScreen].bounds;
+    return CGRectMake(b.size.width - 150.0, 28.0, 140.0, 34.0);
+}
 
 // --------------------------------------------------------
 // GUI Element Helpers
@@ -113,6 +120,17 @@ void GUI_Init() {
 // --------------------------------------------------------
 
 void GUI_Render() {
+    // Always-visible fallback control in case the small M button is obscured.
+    CGRect wm = GUI_WatermarkRect();
+    DrawFilledBox({(float)wm.origin.x, (float)wm.origin.y},
+                  {(float)wm.size.width, (float)wm.size.height},
+                  {0.05f, 0.05f, 0.08f, 0.82f});
+    DrawBox({(float)wm.origin.x, (float)wm.origin.y},
+            {(float)wm.size.width, (float)wm.size.height},
+            Color::Cyan(), 1.0f);
+    DrawText({(float)wm.origin.x + 8.0f, (float)wm.origin.y + 9.0f},
+             "S2Rise  |  TAP", Color::Cyan(), 12.0f);
+
     // always draw toggle button
     Color btnColor = g_Config.menuOpen ? Color(0.9f, 0.2f, 0.2f, 0.85f)
                                        : Color(0.2f, 0.6f, 0.9f, 0.85f);
@@ -179,6 +197,31 @@ static bool PointInRect(CGPoint p, CGRect r) {
 void GUI_HandleTouch(UITouch* touch) {
     CGPoint loc = [touch locationInView:nil];
     UITouchPhase phase = touch.phase;
+
+    CGRect wm = GUI_WatermarkRect();
+    CGRect screen = [UIScreen mainScreen].bounds;
+    CGRect center = CGRectMake(screen.size.width * 0.35, screen.size.height * 0.35,
+                               screen.size.width * 0.30, screen.size.height * 0.30);
+
+    if (phase == UITouchPhaseBegan && PointInRect(loc, wm)) {
+        g_Config.menuOpen = !g_Config.menuOpen;
+        return;
+    }
+
+    if (phase == UITouchPhaseBegan && PointInRect(loc, center)) {
+        NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+        if (now - g_LastCenterTap <= 0.45) {
+            g_CenterTapCount++;
+        } else {
+            g_CenterTapCount = 1;
+        }
+        g_LastCenterTap = now;
+        if (g_CenterTapCount >= 2) {
+            g_Config.menuOpen = !g_Config.menuOpen;
+            g_CenterTapCount = 0;
+        }
+        return;
+    }
     
     // toggle button tap
     if (phase == UITouchPhaseBegan && PointInRect(loc, g_ToggleButtonRect)) {
@@ -240,4 +283,13 @@ void GUI_HandleTouch(UITouch* touch) {
             }
         }
     }
+}
+
+bool GUI_ShouldCapturePoint(CGPoint point) {
+    if (g_Config.menuOpen) return true;
+    CGRect b = [UIScreen mainScreen].bounds;
+    CGRect center = CGRectMake(b.size.width * 0.35, b.size.height * 0.35,
+                               b.size.width * 0.30, b.size.height * 0.30);
+    return PointInRect(point, g_ToggleButtonRect) ||
+           PointInRect(point, GUI_WatermarkRect()) || PointInRect(point, center);
 }

@@ -12,6 +12,8 @@
 @interface S2RiseOverlay : UIView
 @end
 
+extern bool GUI_ShouldCapturePoint(CGPoint point);
+
 @implementation S2RiseOverlay
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -72,9 +74,8 @@
         return [super hitTest:point withEvent:event];
     }
     
-    // always capture the toggle button area
-    CGRect toggleRect = CGRectMake(10.0, 30.0, 44.0, 44.0);
-    if (CGRectContainsPoint(toggleRect, point)) {
+    // Capture only the watermark, legacy M button, or center double-tap zone.
+    if (GUI_ShouldCapturePoint(point)) {
         return self;
     }
     
