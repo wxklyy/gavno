@@ -6,6 +6,7 @@ on:
     paths:
       - 'cheat/**'
       - 'patch_ipa.py'
+      - '.github/workflows/build-patched-ipa.yml'
   workflow_dispatch:
     inputs:
       ipa_artifact:
