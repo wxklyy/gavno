@@ -74,7 +74,7 @@ jobs:
           if [ ! -f "$IPA_FILE" ] && [ -n "$IPA_URL" ]; then
             echo "[+] downloading IPA from supplied URL"
             if [[ "$IPA_URL" == *"drive.google.com"* ]]; then
-              python3 -m gdown "$IPA_URL" --output "$IPA_FILE" --fuzzy
+              python3 -m gdown "$IPA_URL" --output "$IPA_FILE"
             else
               curl --fail --location --retry 3 --output "$IPA_FILE" "$IPA_URL"
             fi
