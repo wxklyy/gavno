@@ -207,9 +207,14 @@ void FridaCloak_Init() {
     MSHookFunction((void*)dlsym,   (void*)hook_dlsym_func, (void**)&orig_dlsym_hook);
     
     // hook memory reading (if game scans for frida strings)
-    MSHookFunction((void*)mach_vm_read_overwrite,
-                   (void*)hook_mach_vm_read_overwrite,
-                   (void**)&orig_mach_vm_read_overwrite);
+    // Some iPhoneOS SDK versions omit the public declaration even though the
+    // symbol is exported by libsystem_kernel. Resolve it dynamically.
+    void* machReadPtr = dlsym(RTLD_DEFAULT, "mach_vm_read_overwrite");
+    if (machReadPtr) {
+        MSHookFunction(machReadPtr,
+                       (void*)hook_mach_vm_read_overwrite,
+                       (void**)&orig_mach_vm_read_overwrite);
+    }
     
     NSLog(@"[S2Rise] Frida cloak installed — all layers active");
 }
