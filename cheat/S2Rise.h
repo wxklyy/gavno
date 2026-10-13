@@ -83,10 +83,6 @@ struct Color {
     static Color Cyan()   { return {0.0f, 1.0f, 1.0f, 1.0f}; }
 };
 
-struct Rect {
-    float x, y, w, h;
-};
-
 // --------------------------------------------------------
 // IL2CPP Runtime API (resolved at runtime)
 // --------------------------------------------------------

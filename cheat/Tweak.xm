@@ -73,7 +73,7 @@
     }
     
     // always capture the toggle button area
-    CGRect toggleRect = {10, 30, 44, 44};
+    CGRect toggleRect = CGRectMake(10.0, 30.0, 44.0, 44.0);
     if (CGRectContainsPoint(toggleRect, point)) {
         return self;
     }
