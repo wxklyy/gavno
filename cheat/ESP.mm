@@ -69,7 +69,6 @@ static int g_PlayerCount = 0;
 // Cached pointers (resolved once)
 // --------------------------------------------------------
 
-static void* g_PlayerManagerClass = nullptr;
 static void* g_PlayerManagerInstance = nullptr;  // singleton
 
 // function pointers for game methods
