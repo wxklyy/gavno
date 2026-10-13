@@ -8,12 +8,12 @@
 // Menu State
 // --------------------------------------------------------
 
-static CGRect g_MenuRect = {20, 80, 300, 420};
+static CGRect g_MenuRect = CGRectMake(20, 80, 300, 420);
 static bool g_Dragging = false;
 static CGPoint g_DragOffset;
 
 // toggle button position (floating button to open/close menu)
-static CGRect g_ToggleButtonRect = {10, 30, 44, 44};
+static CGRect g_ToggleButtonRect = CGRectMake(10, 30, 44, 44);
 
 // --------------------------------------------------------
 // GUI Element Helpers
@@ -189,7 +189,7 @@ void GUI_HandleTouch(UITouch* touch) {
     if (!g_Config.menuOpen) return;
     
     // title bar drag
-    CGRect titleBar = {g_MenuRect.origin.x, g_MenuRect.origin.y, g_MenuRect.size.width, 40};
+    CGRect titleBar = CGRectMake(g_MenuRect.origin.x, g_MenuRect.origin.y, g_MenuRect.size.width, 40);
     
     if (phase == UITouchPhaseBegan && PointInRect(loc, titleBar)) {
         g_Dragging = true;
