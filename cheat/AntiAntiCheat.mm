@@ -240,7 +240,12 @@ void AAC_Init() {
     // --- C hooks ---
     MSHookFunction((void*)fopen,    (void*)hook_fopen,    (void**)&orig_fopen);
     MSHookFunction((void*)access,   (void*)hook_access,   (void**)&orig_access);
-    MSHookFunction((void*)stat,     (void*)hook_stat,     (void**)&orig_stat);
+    // `stat` is also used as the POSIX struct tag above, so resolve the
+    // function symbol explicitly instead of relying on the ambiguous name.
+    void* stat_ptr = dlsym(RTLD_DEFAULT, "stat");
+    if (stat_ptr) {
+        MSHookFunction(stat_ptr, (void*)hook_stat, (void**)&orig_stat);
+    }
     
     // --- anti-debug ---
     void* ptrace_ptr = dlsym(RTLD_DEFAULT, "ptrace");
