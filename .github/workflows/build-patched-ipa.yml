@@ -34,6 +34,7 @@ jobs:
           export PATH=$THEOS/bin:$PATH
 
           # build the tweak as a dylib
+          rm -rf packages .theos/obj .theos/build
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
           # locate compiled dylib
@@ -49,13 +50,15 @@ jobs:
           cp "$DYLIB" $GITHUB_WORKSPACE/S2Rise.dylib
 
           # Preserve the rootless Debian package produced by Theos for Sileo.
-          DEB=$(find packages .theos -type f -name "*.deb" ! -path "*.dSYM*" 2>/dev/null | head -1)
+          DEB=$(find packages -type f -name "*.deb" ! -path "*.dSYM*" 2>/dev/null | head -1)
           if [ -z "$DEB" ]; then
             echo "[-] rootless .deb package not found"
             find .theos -type f | sort
             exit 1
           fi
           echo "[+] built package: $DEB"
+          dpkg-deb --info "$DEB"
+          test "$(dpkg-deb -f "$DEB" Architecture)" = "iphoneos-arm64"
           cp "$DEB" $GITHUB_WORKSPACE/S2Rise-rootless.deb
 
       - name: Upload Raw Dylib

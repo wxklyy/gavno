@@ -1,6 +1,9 @@
 ARCHS = arm64
 TARGET = iphone:clang:14.5:14.0
-INSTALL_TARGET_PROCESSES = standoff2
+# The executable in the target IPA is StandRiseRE (the bundle identifier is
+# com.standrise.game).  Using the old executable name prevents injection even
+# when the package installs successfully.
+INSTALL_TARGET_PROCESSES = StandRiseRE
 
 include $(THEOS)/makefiles/common.mk
 
