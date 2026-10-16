@@ -44,7 +44,7 @@ jobs:
           export PATH=$THEOS/bin:$PATH
 
           # build the tweak as a dylib
-          make FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
           # locate compiled dylib
           DYLIB=$(find .theos -type f -name "S2Rise.dylib" ! -path "*.dSYM*" | head -1)
