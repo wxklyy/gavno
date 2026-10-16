@@ -1,9 +1,6 @@
 Package: com.s2rise.tweak
 Name: S2Rise
 Version: 1.0.1
-# Rootless packages are installed by Dopamine/bootstrap and must advertise
-# the 64-bit rootless architecture.  iphoneos-arm makes the package appear
-# installable while its layout/dependencies are wrong for /var/jb.
 Architecture: iphoneos-arm64
 Description: S2Rise in-game overlay tweak
 Maintainer: S2Rise
