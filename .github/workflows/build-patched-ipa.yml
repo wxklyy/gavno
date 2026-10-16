@@ -1,22 +1,12 @@
-name: Build Patched IPA
+name: Build S2Rise Debian Package
 
 on:
   push:
     branches: [main]
     paths:
       - 'cheat/**'
-      - 'patch_ipa.py'
       - '.github/workflows/build-patched-ipa.yml'
   workflow_dispatch:
-    inputs:
-      ipa_artifact:
-        description: 'IPA file name in repo root (e.g. StandRise-RE-1.0.0F2.ipa)'
-        required: true
-        default: 'StandRise-RE-1.0.0F2.ipa'
-      ipa_url:
-        description: 'Optional HTTPS URL to download the input IPA'
-        required: false
-        default: 'https://drive.google.com/file/d/1Z6QmZvoKfLZXtL349fOIw5RsnZBJZyJe/view?usp=sharing'
 
 jobs:
   build-cheat-and-patch:
@@ -67,50 +57,6 @@ jobs:
           fi
           echo "[+] built package: $DEB"
           cp "$DEB" $GITHUB_WORKSPACE/S2Rise-rootless.deb
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install IPA downloader
-        run: python3 -m pip install --disable-pip-version-check gdown
-
-      - name: Patch IPA
-        run: |
-          IPA_FILE="${{ github.event.inputs.ipa_artifact || 'StandRise-RE-1.0.0F2.ipa' }}"
-
-          IPA_URL="${{ github.event.inputs.ipa_url || 'https://drive.google.com/file/d/1Z6QmZvoKfLZXtL349fOIw5RsnZBJZyJe/view?usp=sharing' }}"
-          if [ ! -f "$IPA_FILE" ] && [ -n "$IPA_URL" ]; then
-            echo "[+] downloading IPA from supplied URL"
-            if [[ "$IPA_URL" == *"drive.google.com"* ]]; then
-              python3 -m gdown "$IPA_URL" --output "$IPA_FILE"
-            else
-              curl --fail --location --retry 3 --output "$IPA_FILE" "$IPA_URL"
-            fi
-          fi
-
-          if [ ! -f "$IPA_FILE" ]; then
-            echo "[-] IPA not found: $IPA_FILE"
-            echo "[*] Upload the IPA to the repository (or Git LFS) or run workflow_dispatch with ipa_url"
-            echo "[*] available files:"
-            ls -la *.ipa 2>/dev/null || echo "  no .ipa files in root"
-            exit 1
-          fi
-
-          python3 patch_ipa.py "$IPA_FILE" \
-            --dylib S2Rise.dylib \
-            --output S2Rise_patched.ipa
-
-          echo "[+] patched IPA ready"
-          ls -lh S2Rise_patched.ipa
-
-      - name: Upload Patched IPA
-        uses: actions/upload-artifact@v4
-        with:
-          name: S2Rise-patched-ipa
-          path: S2Rise_patched.ipa
-          retention-days: 30
 
       - name: Upload Raw Dylib
         uses: actions/upload-artifact@v4
