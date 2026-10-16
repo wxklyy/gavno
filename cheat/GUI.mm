@@ -12,14 +12,21 @@ static CGRect g_MenuRect = CGRectMake(20, 80, 300, 420);
 static bool g_Dragging = false;
 static CGPoint g_DragOffset;
 
-// toggle button position (floating button to open/close menu)
-static CGRect g_ToggleButtonRect = CGRectMake(10, 30, 44, 44);
 static NSTimeInterval g_LastCenterTap = 0;
 static int g_CenterTapCount = 0;
 
 static CGRect GUI_WatermarkRect() {
-    CGRect b = [UIScreen mainScreen].bounds;
-    return CGRectMake(b.size.width - 150.0, 28.0, 140.0, 34.0);
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CGRect b = window ? window.bounds : [UIScreen mainScreen].bounds;
+    UIEdgeInsets insets = window ? window.safeAreaInsets : UIEdgeInsetsZero;
+
+    // Keep the hit target inside the visible safe area in both orientations.
+    const CGFloat width = 150.0;
+    const CGFloat height = 36.0;
+    const CGFloat rightMargin = 12.0;
+    const CGFloat topMargin = 10.0;
+    return CGRectMake(CGRectGetMaxX(b) - insets.right - width - rightMargin,
+                      insets.top + topMargin, width, height);
 }
 
 // --------------------------------------------------------
@@ -120,27 +127,17 @@ void GUI_Init() {
 // --------------------------------------------------------
 
 void GUI_Render() {
-    // Always-visible fallback control in case the small M button is obscured.
+    // Always-visible watermark. Tapping it toggles the menu.
     CGRect wm = GUI_WatermarkRect();
     DrawFilledBox({(float)wm.origin.x, (float)wm.origin.y},
                   {(float)wm.size.width, (float)wm.size.height},
-                  {0.05f, 0.05f, 0.08f, 0.82f});
+                  {0.05f, 0.05f, 0.08f, 0.76f});
     DrawBox({(float)wm.origin.x, (float)wm.origin.y},
             {(float)wm.size.width, (float)wm.size.height},
             Color::Cyan(), 1.0f);
     DrawText({(float)wm.origin.x + 8.0f, (float)wm.origin.y + 9.0f},
-             "S2Rise  |  TAP", Color::Cyan(), 12.0f);
-
-    // always draw toggle button
-    Color btnColor = g_Config.menuOpen ? Color(0.9f, 0.2f, 0.2f, 0.85f)
-                                       : Color(0.2f, 0.6f, 0.9f, 0.85f);
-    DrawFilledBox(
-        {(float)g_ToggleButtonRect.origin.x, (float)g_ToggleButtonRect.origin.y},
-        {(float)g_ToggleButtonRect.size.width, (float)g_ToggleButtonRect.size.height},
-        btnColor);
-    DrawText(
-        {(float)g_ToggleButtonRect.origin.x + 10, (float)g_ToggleButtonRect.origin.y + 12},
-        g_Config.menuOpen ? "X" : "M", Color::White(), 16.0f);
+             g_Config.menuOpen ? "S2Rise  |  OPEN" : "S2Rise  |  TAP",
+             Color::Cyan(), 12.0f);
     
     if (!g_Config.menuOpen) return;
     
@@ -223,12 +220,6 @@ void GUI_HandleTouch(UITouch* touch) {
         return;
     }
     
-    // toggle button tap
-    if (phase == UITouchPhaseBegan && PointInRect(loc, g_ToggleButtonRect)) {
-        g_Config.menuOpen = !g_Config.menuOpen;
-        return;
-    }
-    
     if (!g_Config.menuOpen) return;
     
     // title bar drag
@@ -290,6 +281,5 @@ bool GUI_ShouldCapturePoint(CGPoint point) {
     CGRect b = [UIScreen mainScreen].bounds;
     CGRect center = CGRectMake(b.size.width * 0.35, b.size.height * 0.35,
                                b.size.width * 0.30, b.size.height * 0.30);
-    return PointInRect(point, g_ToggleButtonRect) ||
-           PointInRect(point, GUI_WatermarkRect()) || PointInRect(point, center);
+    return PointInRect(point, GUI_WatermarkRect()) || PointInRect(point, center);
 }

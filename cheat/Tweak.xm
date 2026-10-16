@@ -74,7 +74,7 @@ extern bool GUI_ShouldCapturePoint(CGPoint point);
         return [super hitTest:point withEvent:event];
     }
     
-    // Capture only the watermark, legacy M button, or center double-tap zone.
+    // Capture only the watermark or center double-tap zone.
     if (GUI_ShouldCapturePoint(point)) {
         return self;
     }

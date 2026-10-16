@@ -58,6 +58,16 @@ jobs:
           file "$DYLIB"
           cp "$DYLIB" $GITHUB_WORKSPACE/S2Rise.dylib
 
+          # Preserve the rootless Debian package produced by Theos for Sileo.
+          DEB=$(find .theos -type f -name "*.deb" ! -path "*.dSYM*" | head -1)
+          if [ -z "$DEB" ]; then
+            echo "[-] rootless .deb package not found"
+            find .theos -type f | sort
+            exit 1
+          fi
+          echo "[+] built package: $DEB"
+          cp "$DEB" $GITHUB_WORKSPACE/S2Rise-rootless.deb
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -107,4 +117,11 @@ jobs:
         with:
           name: S2Rise-dylib
           path: S2Rise.dylib
+          retention-days: 30
+
+      - name: Upload Rootless Debian Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: S2Rise-rootless-deb
+          path: S2Rise-rootless.deb
           retention-days: 30

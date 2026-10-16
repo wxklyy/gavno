@@ -218,7 +218,8 @@ struct CheatConfig {
     bool fridaCloakEnabled = true;
     
     // GUI
-    bool menuOpen         = true;
+    // Closed by default; open with watermark tap or center double-tap.
+    bool menuOpen         = false;
 };
 
 extern CheatConfig g_Config;
