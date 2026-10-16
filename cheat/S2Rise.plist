@@ -1,1 +1,1 @@
-{ Filter = { Bundles = ( "com.Rise.Rework" ); }; }
+{ Filter = { Bundles = ( "com.standrise.game" ); }; }
