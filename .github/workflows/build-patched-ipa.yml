@@ -49,7 +49,7 @@ jobs:
           cp "$DYLIB" $GITHUB_WORKSPACE/S2Rise.dylib
 
           # Preserve the rootless Debian package produced by Theos for Sileo.
-          DEB=$(find .theos -type f -name "*.deb" ! -path "*.dSYM*" | head -1)
+          DEB=$(find packages .theos -type f -name "*.deb" ! -path "*.dSYM*" 2>/dev/null | head -1)
           if [ -z "$DEB" ]; then
             echo "[-] rootless .deb package not found"
             find .theos -type f | sort
