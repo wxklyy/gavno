@@ -1,0 +1,9 @@
+Package: com.s2rise.tweak
+Name: S2Rise
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: S2Rise in-game overlay tweak
+Maintainer: S2Rise
+Author: S2Rise
+Section: Tweaks
+Depends: mobilesubstrate
